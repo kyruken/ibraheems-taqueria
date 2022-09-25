@@ -1,10 +1,9 @@
-import home from './home.js';
-import navbar from './navbar.js';
+import {initHomePage} from './website.js';
 
-function initHomePage() {
-    const content = document.getElementById("content");
-    document.body.appendChild(navbar());
-    document.body.appendChild(home());
+function changePage() {
+    document.body.removeChild(home());
 }
 
 initHomePage();
+
+export {changePage};

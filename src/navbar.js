@@ -1,4 +1,4 @@
-import {changePage} from './index.js';
+import {removePage, changePage} from './index.js';
 
 export default function navbar() {
 
@@ -14,12 +14,14 @@ export default function navbar() {
     menuButton.textContent = 'Menu';
     aboutButton.textContent = 'About';
 
+    menuButton.addEventListener('click',() => {
+        removePage();
+        changePage(navbar());
+    })
+
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
     nav.appendChild(aboutButton);
-    nav.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', changePage())
-    })
 
     nav.appendChild(restaurantName);
 

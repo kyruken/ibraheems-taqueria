@@ -8,10 +8,10 @@ function removePage() {
       }
 }
 
-function switchPage() {
-
+function changePage(newPage) {
+    node.appendChild(newPage);
 }
 
 initHomePage();
 
-export {changePage};
+export {removePage, changePage};

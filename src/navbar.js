@@ -1,6 +1,7 @@
 import {removePage, changePage} from './index.js';
 import menu from './menu.js';
 import home from './home.js';
+import about from './about.js';
 
 export default function navbar() {
 
@@ -26,6 +27,10 @@ export default function navbar() {
         changePage(menu());
     })
 
+    aboutButton.addEventListener('click',() => {
+        removePage();
+        changePage(about());
+    })
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
     nav.appendChild(aboutButton);
